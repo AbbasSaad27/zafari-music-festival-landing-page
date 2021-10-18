@@ -1,33 +1,37 @@
 "use strict";
 
 // getting elements
-const header = document.querySelector("header");
-const timerCounts = document.querySelectorAll(".count");
-const menuOpener = document.querySelector(".menu-opener");
-const hamburgerLines = document.querySelectorAll(".line");
-const mobileNavigation = document.querySelector(".mobile-navigation");
+var header = document.getElementsByTagName("header")[0];
+var timerCounts = document.getElementsByClassName("count");
+var menuOpener = document.getElementsByClassName("menu-opener")[0];
+var hamburgerLines = [...document.getElementsByClassName("line")];
+var mobileNavigation = document.getElementsByClassName("mobile-navigation")[0];
+var dropdownOpeners = [...document.getElementsByClassName("dropdown-opener")];
+var mobileDropdowns = [
+  ...document.getElementsByClassName("mobile-dropdown-nav"),
+];
 
 // timer deadline
-const deadline = new Date("Sept 22, 2022").getTime();
+var deadline = new Date("Sept 22, 2022").getTime();
 
 // timer interval
-const timer = setInterval(function () {
+var timer = setInterval(function () {
   // current time
-  const now = new Date().getTime();
+  var now = new Date().getTime();
 
   // remaining time till deadline
-  const remainingTime = deadline - now;
-  const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-  const hours = Math.floor(
+  var remainingTime = deadline - now;
+  var days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+  var hours = Math.floor(
     (remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
   );
-  const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+  var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
   // showing the timer in dom
   [days, hours, minutes, seconds].forEach(function (time, index) {
     // checking if the time is a single number by turning it into a string first then checking its length! :D
-    let modifiedTime = (time + "").length > 1 ? time : `0${time}`;
+    var modifiedTime = (time + "").length > 1 ? time : "0" + time + "";
     timerCounts[index].innerText = modifiedTime;
   });
 }, 1000);
@@ -49,9 +53,19 @@ menuOpener.addEventListener("click", function (e) {
   });
 });
 
+// dropdown opening
+dropdownOpeners.forEach(function (opener, index) {
+  opener.addEventListener("click", function (e) {
+    this.classList.toggle("opener-active");
+    mobileDropdowns[index].classList.toggle(
+      "mobile-dropdown-nav-active-" + (index + 1)
+    );
+  });
+});
+
 // making header sticky on scroll
 window.addEventListener("scroll", function (e) {
-  if (screen.availWidth > 980) {
+  if (window.innerWidth > 980) {
     header.classList.toggle("sticky-head", window.scrollY > 0);
   }
 });
