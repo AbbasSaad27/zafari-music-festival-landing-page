@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+#container {
+  background-image: url("../images/blurrybackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  font-size: 1.6rem;
+}
+
+header {
+  width: 100%;
+  color: white;
+  padding: 5rem 0 0;
+  transition: all 0.3s;
+}
+
+.sticky-head {
+  background-color: black;
+  position: fixed;
+  top: 0;
+  backface-visibility: hidden;
+  z-index: 100;
+}
+
+.logo-container {
+  height: 100%;
+}
+
+.logo-container,
+.header-img {
+  width: 12rem;
+}
+
+.header-logo {
+  position: relative;
+  top: -0.8rem;
+}
+
+header,
+.navigation-list,
+.header-nav-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.navigation {
+  height: 100%;
+  width: 80%;
+}
+
+.header-nav-wrapper {
+  height: 7rem;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 0 4rem;
+}
+.navigation-list {
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.7rem;
+}
+
+.nav-item,
+.nav-link {
+  height: 100%;
+  display: block;
+  display: flex;
+  align-items: center;
+  /* overflow-x: hidden; */
+  color: white;
+  transition: 0.3s all;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #3ca533;
+}
+
+.dropdown-nav {
+  position: absolute;
+  top: 100%;
+  width: max-content;
+  background-color: black;
+  padding: 2rem 2rem 1rem;
+  display: none;
+  z-index: 100;
+}
+.dropdown-nav-item {
+  margin-bottom: 2rem;
+}
+
+.dropdown-nav:hover {
+  display: block;
+}
+
+.nav-link:hover ~ .dropdown-nav {
+  display: block;
+}
+
+.btn-donate {
+  width: 25rem;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+#content-container {
+  height: 100vh;
+}
+
+#content-container,
+.section-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-main {
+  flex-direction: column;
+}
+
+.main-logo-container {
+  width: 50%;
+  position: relative;
+}
+
+.main-logo {
+  width: 100%;
+}
+
+.schedule-text {
+  position: absolute;
+  top: 65%;
+  color: white;
+  left: 2.2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.timer-container {
+  padding: 0.5rem 4rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 60%;
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 3px;
+}
+
+.count {
+  display: block;
+  text-align: center;
+}
+
+.footer-wrapper {
+  width: 100%;
+  padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo {
+  width: 30rem;
+}
+
+.social-media-list,
+.footer-nav {
+  display: flex;
+  margin: 1rem 0;
+}
+
+.social-media {
+  padding: 2rem 1rem;
+}
+
+.social-link {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  transition: background-color 0.3s;
+}
+
+.social-link2,
+.social-link3 {
+  padding: 1rem 1.2rem;
+}
+
+.social-link:hover {
+  background-color: #3ca533;
+}
+
+.footer-nav-item:not(:first-child) {
+  margin-left: 2rem;
+}
+
+.footer-link {
+  color: white;
+  transition: all 0.3;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: #3ca533;
+}
+
+.copyright-message {
+  margin: 1rem 0;
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* media queries */
+
+@media only screen and (min-width: 1440px) {
+  html {
+    font-size: 65%;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  html {
+    font-size: 70%;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  html {
+    font-size: 75%;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  html {
+    font-size: 60%;
+  }
+}
