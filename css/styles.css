@@ -314,7 +314,7 @@ header,
 }
 
 .main-logo-container {
-  width: 50%;
+  width: 42%;
   position: relative;
 }
 
@@ -334,6 +334,18 @@ header,
   text-transform: uppercase;
   z-index: -1;
   letter-spacing: 2px;
+}
+
+/* white circle behing image */
+.white-circle {
+  width: 32%;
+  height: 32%;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  right: -1.2%;
+  bottom: 7.2%;
+  z-index: -2;
 }
 
 /* timer styles */
